@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  asset-browser:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../vania/src/assets:/app/assets:ro  # Update this path to your vania repo
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
